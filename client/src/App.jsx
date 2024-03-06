@@ -720,7 +720,7 @@ function App() {
                   <div className="card">
                     <div className="card-body">
                       <img
-                        src="./public/prateek.jpg" 
+                        src="/prateek.jpg" 
                         className="img-fluid rounded-circle mb-3"
                         alt="GitHub Profile"
                       />
