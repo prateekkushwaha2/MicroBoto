@@ -819,7 +819,7 @@ function App() {
                   <div key={index} className="col-md-4 mb-4">
                     <div className="card">
                       <img
-                        src="../src/assets/opensource.png"
+                        src="assets/opensource.png"
                         className="card-img-top"
                         alt={`Project ${index + 1}`}
                       />
