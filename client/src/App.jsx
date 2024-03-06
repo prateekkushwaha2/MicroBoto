@@ -1,4 +1,5 @@
 import MicroBotoLogo from './assets/logo.png'
+import opensource from './assets/opensource.png'
 import './App.css'
 import React from 'react';
 import { useState, useEffect } from 'react';
@@ -768,7 +769,7 @@ function App() {
                   <div className="col-lg-6">
                     {/* Add images or illustrations representing your team or workspace */}
                     <img
-                      src="./src/assets/logo.png"
+                      src="./assets/logo.png"
                       alt="Team at Work"
                       className="img-fluid rounded shadow-lg"
                     />
@@ -819,7 +820,7 @@ function App() {
                   <div key={index} className="col-md-4 mb-4">
                     <div className="card">
                       <img
-                        src="assets/opensource.png"
+                        src={opensource}
                         className="card-img-top"
                         alt={`Project ${index + 1}`}
                       />
