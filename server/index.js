@@ -24,7 +24,7 @@ const pool = mysql.createPool({
   connectionLimit: process.env.DB_CONNECTION_LIMIT || 10,
   queueLimit: 0
 });
-
+app.get("/", (req, res) => res.send("Express on Vercel"));
 // Middleware for parsing requests
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
