@@ -22,7 +22,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/login', {
+      const response = await fetch('https://micro-boto-lt5j.vercel.app/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/createAccount', {
+      const response = await fetch('https://micro-boto-lt5j.vercel.app/createAccount', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/resetPassword', {
+      const response = await fetch('https://micro-boto-lt5j.vercel.app/resetPassword', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
