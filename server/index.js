@@ -120,7 +120,7 @@ const transporter = nodemailer.createTransport({
 
 // Route for initiating the password reset
 // Route for initiating the password reset
-const clientURL = 'http://localhost:5173';
+const clientURL = 'https://micro-boto.vercel.app';
 
 app.post('/resetPassword', async (req, res) => {
   const { email } = req.body;
