@@ -12,7 +12,7 @@ const PasswordChange = () => {
 
   useEffect(() => {
     // Validate the token when the component mounts
-    const serverEndpoint = `http://localhost:3000/validateToken/${token}`;
+    const serverEndpoint = `https://micro-boto-lt5j.vercel.app/validateToken/${token}`;
 
     const validateToken = async () => {
       try {
@@ -49,7 +49,7 @@ const PasswordChange = () => {
       return;
     }
 
-    const serverEndpoint = `http://localhost:3000/resetPassword/${token}`;
+    const serverEndpoint = `https://micro-boto-lt5j.vercel.app/resetPassword/${token}`;
 
     try {
       const response = await fetch(serverEndpoint, {
