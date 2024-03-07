@@ -25,7 +25,7 @@ function Userprofile(){
     
     const fetchDataFromServer = async (id) => {
       try {
-        const response = await fetch('http://localhost:3000/loginValueCheck', {
+        const response = await fetch('https://micro-boto-lt5j.vercel.app/loginValueCheck', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
