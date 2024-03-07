@@ -8,7 +8,7 @@ const crypto = require('crypto');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3306;
 
 dotenv.config();
 app.use(cors());
