@@ -13,32 +13,33 @@ const port = process.env.PORT || 3306;
 dotenv.config();
 app.use(cors());
 
-console.log('Database Connection Details:', {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  // ... other details
-});
+// console.log('Database Connection Details:', {
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   // ... other details
+// });
 // Database setup
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
-  waitForConnections: true,
-  connectionLimit: process.env.DB_CONNECTION_LIMIT || 10,
-  queueLimit: 0
-});
-pool.getConnection()
-  .then(() => {
-    console.log('Connected to the database!');
-  })
-  .catch((err) => {
-    console.error('Error connecting to the database:', err);
-  })
-  .finally(() => {
-    // Release the connection if it was acquired
-    pool.end();
-  });
+// const pool = mysql.createPool({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_DATABASE,
+//   waitForConnections: true,
+//   connectionLimit: process.env.DB_CONNECTION_LIMIT || 10,
+//   queueLimit: 0
+// });
+const pool = mysql.createPool(process.env.DB_CONNECTION_URI);
+// pool.getConnection()
+//   .then(() => {
+//     console.log('Connected to the database!');
+//   })
+//   .catch((err) => {
+//     console.error('Error connecting to the database:', err);
+//   })
+//   .finally(() => {
+//     // Release the connection if it was acquired
+//     pool.end();
+//   });
 app.get("/", (req, res) => res.send("Express on Vercel"));
 // Middleware for parsing requests
 app.use(bodyParser.urlencoded({ extended: true }));
