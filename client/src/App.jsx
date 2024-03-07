@@ -769,7 +769,7 @@ function App() {
                   <div className="col-lg-6">
                     {/* Add images or illustrations representing your team or workspace */}
                     <img
-                      src="{MicroBotoLogo}
+                      src={MicroBotoLogo}
                       alt="Team at Work"
                       className="img-fluid rounded shadow-lg"
                     />
