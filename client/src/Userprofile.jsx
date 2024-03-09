@@ -337,7 +337,7 @@ function Userprofile(){
              
                       
                       <button className="btn btn-info" onclick="openRazorpay()" >Enroll Now</button>
-                     
+                     </div>
                   </div>
                 </div>
 
