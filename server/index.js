@@ -11,12 +11,12 @@ const Razorpay = require('razorpay');
 const app = express();
 const port = process.env.PORT || 3306;
 
-app.use(cors(corsOptions));
+
 const corsOptions = {
   origin: 'https://micro-boto.vercel.app',
   optionsSuccessStatus: 200,
 };
-
+app.use(cors(corsOptions));
 
 
 // console.log('Database Connection Details:', {
