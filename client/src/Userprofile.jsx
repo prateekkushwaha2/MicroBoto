@@ -317,7 +317,7 @@ function Userprofile(){
                       </ul>
                       <br></br>
                       
-                      <button className="btn btn-info" onclick="openRazorpay()">Enroll Now</button>
+                      <button className="btn btn-info" onClick={openRazorpay}>Enroll Now</button>
                       
                     </div>
                   </div>
@@ -336,7 +336,7 @@ function Userprofile(){
                       <br></br>
              
                       
-                      <button className="btn btn-info" onclick="openRazorpay()" >Enroll Now</button>
+                      <button className="btn btn-info" onClick={openRazorpay}>Enroll Now</button>
                      </div>
                   </div>
                 </div>
@@ -354,7 +354,7 @@ function Userprofile(){
                       <br></br>
                     
                      
-                      <button className="btn btn-info" onclick="openRazorpay()">Enroll Now</button>
+                      <button className="btn btn-info" onClick={openRazorpay}>Enroll Now</button>
                      
                       
                     </div>
