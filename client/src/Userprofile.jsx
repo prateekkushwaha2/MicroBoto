@@ -62,7 +62,7 @@ function Userprofile(){
 
     //paymnet intregation
 
-    const openRazorpay = async (serverData) => {
+    const openRazorpay = async (userData) => {
       const response = await fetch('http://localhost:3000/create-order', { method: 'POST' });
       const order = await response.json();
   
@@ -84,9 +84,9 @@ function Userprofile(){
           }
         },
         prefill: {
-          name: serverData.name,
-          email: serverData.email,
-          id: serverData.id,
+          name: userData.name,
+          email: userData.email,
+          id: userData.id,
         },
         theme: {
           color: '#F37254',
@@ -97,7 +97,7 @@ function Userprofile(){
       rzp.open();
     };
   
-    const handlePaymentSuccess = async (response, serverData) => {
+    const handlePaymentSuccess = async (response, userData) => {
       // Perform actions when payment is successful
       console.log('Payment successful!');
     
@@ -110,7 +110,7 @@ function Userprofile(){
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            email: serverData.email,
+            email: usererData.email,
           }),
         });
     
