@@ -108,10 +108,8 @@ function Userprofile(){
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            email: userData.email,
-          }),
+          },  
+            body: JSON.stringify({ email: userEmail }),
         });
     
         if (updateResponse.ok) {
