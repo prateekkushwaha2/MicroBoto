@@ -104,6 +104,7 @@ function Userprofile(){
       try {
     
         // Make an API request to update isjava value
+        const userEmail = userData.email;
         const updateResponse = await fetch('https://micro-boto-lt5j.vercel.app/update-isjava', {
           method: 'POST',
           headers: {
