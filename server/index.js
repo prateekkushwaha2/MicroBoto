@@ -69,27 +69,7 @@ app.post('/create-order', async (req, res) => {
   }
 });
 
-app.post('/update-isjava' , async (req, res) =>{
-  const {email} = req.body;
-  try {
-    // Check if the user with the given email exists
-    const [user] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
 
-    if (!user || user.length === 0) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-
-    // Update the 'isjava' value to true
-    await pool.query('UPDATE users SET isjava = true WHERE email = ?', [email]);
-
-    // Send a success response
-    res.status(200).json({ message: 'isjava updated successfully' });
-  } catch (error) {
-    console.error('Error updating isjava:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-
-});
 
 //end 
 
@@ -177,6 +157,33 @@ app.post('/loginValueCheck', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
+
+
+app.post('/update-isjava' , async (req, res) =>{
+  const { email } = req.body;
+  try {
+    // Check if the user with the given email exists
+    const [user] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+
+    if (!user || user.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Update the 'isjava' value to true
+    await pool.query('UPDATE users SET isjava = true WHERE email = ?', [email]);
+
+    // Send a success response
+    res.status(200).json({ message: 'isjava updated successfully' });
+  } catch (error) {
+    console.error('Error updating isjava:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+
+});
+
+
 
 // Nodemailer setup
 const transporter = nodemailer.createTransport({
