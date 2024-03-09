@@ -85,7 +85,7 @@ function Userprofile(){
         },
         prefill: {
           name: serverData.name,
-          email: serverData.email;   
+          email: serverData.email,   
         },
         theme: {
           color: '#F37254',
