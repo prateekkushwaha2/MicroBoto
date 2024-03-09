@@ -62,7 +62,7 @@ function Userprofile(){
 
     //paymnet intregation
 
-    const openRazorpay = async (serverData) => {
+    const openRazorpay = async () => {
       const response = await fetch('https://micro-boto-lt5j.vercel.app/create-order', { method: 'POST' });
       const order = await response.json();
   
@@ -84,8 +84,8 @@ function Userprofile(){
           }
         },
         prefill: {
-          name: serverData.name,
-          email: serverData.email,   
+          name: "prateek raj",
+          email: "87979080909",   
         },
         theme: {
           color: '#F37254',
@@ -96,15 +96,15 @@ function Userprofile(){
       rzp.open();
     };
   
-    const handlePaymentSuccess = async (response, serverData) => {
+    const handlePaymentSuccess = async (response,) => {
       // Perform actions when payment is successful
       console.log('Payment successful!');
     
       try {
     
         // Make an API request to update isjava value
-           console.log(serverData);
-        const userEmail = serverData.email;
+        
+        const userEmail = "rajprateek874@gmail.com";
         const updateResponse = await fetch('https://micro-boto-lt5j.vercel.app/update-isjava', {
           method: 'POST',
           headers: {
