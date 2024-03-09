@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const cors = require('cors');
+const Razorpay = require('razorpay');
 
 const app = express();
 const port = process.env.PORT || 3306;
@@ -45,6 +46,53 @@ const pool = mysql.createPool(process.env.DB_CONNECTION_URI);
 //     // Release the connection if it was acquired
 //     pool.end();
 //   });
+
+
+
+const razorpay = new Razorpay({
+  key_id: 'rzp_test_OtMj92aUxskfFU',
+  key_secret: 'PeuHXfHbJPzABdYUTD44AyhU',
+});
+
+app.post('/create-order', async (req, res) => {
+  const options = {
+    amount: 50000, // Amount in paise (e.g., 50000 paise = ₹500)
+    currency: 'INR',
+  };
+
+  try {
+    const order = await razorpay.orders.create(options);
+    res.json(order);
+  } catch (error) {
+    console.error('Error creating Razorpay order:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.post('/update-isjava' , async (req, res) =>{
+  const {email} = req.body;
+  try {
+    // Check if the user with the given email exists
+    const [user] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+
+    if (!user || user.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Update the 'isjava' value to true
+    await pool.query('UPDATE users SET isjava = true WHERE email = ?', [email]);
+
+    // Send a success response
+    res.status(200).json({ message: 'isjava updated successfully' });
+  } catch (error) {
+    console.error('Error updating isjava:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+
+});
+
+//end 
+
 app.get("/", (req, res) => res.send("Express on Vercel"));
 // Middleware for parsing requests
 app.use(bodyParser.urlencoded({ extended: true }));

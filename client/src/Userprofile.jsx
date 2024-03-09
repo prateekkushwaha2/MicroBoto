@@ -1,6 +1,5 @@
 
 import MicroBotoLogo from './assets/logo.png'
-import us from './Userprofile.module.css'
 import React from 'react';
 import './index.css'
 import {useNavigate, useLocation, Link } from 'react-router-dom';
@@ -10,7 +9,7 @@ import { useState, useEffect, setState} from 'react';
 
 
 function Userprofile(){
-  const navigate = useNavigate();
+     const navigate = useNavigate();
 
     const location = useLocation();
     const userData = location.state?.userData  || null;
@@ -60,7 +59,80 @@ function Userprofile(){
         console.error('Error fetching data from the server:', error);
       }
     };
-   
+
+    //paymnet intregation
+
+    const openRazorpay = async (serverData) => {
+      const response = await fetch('http://localhost:3000/create-order', { method: 'POST' });
+      const order = await response.json();
+  
+      const options = {
+        key: 'rzp_test_OtMj92aUxskfFU', // Replace with your Razorpay test key
+        amount: order.amount,
+        currency: order.currency,
+        name: 'MicroBoto',
+        description: 'Product/Service Description',
+        order_id: order.id,
+        handler: function (response) {
+          console.log(response);
+  
+          // Check if the payment was successful
+          if (response.razorpay_payment_id) {
+            handlePaymentSuccess(response);
+          } else {
+            handlePaymentFailure(response);
+          }
+        },
+        prefill: {
+          name: serverData.name,
+          email: serverData.email,
+          id: serverData.id,
+        },
+        theme: {
+          color: '#F37254',
+        },
+      };
+  
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    };
+  
+    const handlePaymentSuccess = async (response, serverData) => {
+      // Perform actions when payment is successful
+      console.log('Payment successful!');
+    
+      try {
+    
+        // Make an API request to update isjava value
+        const updateResponse = await fetch('/update-isjava', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: serverData.email,
+          }),
+        });
+    
+        if (updateResponse.ok) {
+          navigate('/bot');
+        } else {
+          console.error('Failed to update isjava:', updateResponse.statusText);
+          alert('Failed to update isjava. Please try again later.');
+        }
+      } catch (error) {
+        console.error('Error updating isjava:', error);
+        alert('Error updating isjava. Please try again later.');
+      }
+    };
+  
+    const handlePaymentFailure = (response) => {
+      // Perform actions when payment fails
+      console.error('Payment failed:', response.error.description);
+      alert(`Payment failed: ${response.error.description}`); // You can replace this with your desired action
+    };
+  
+    //paymnet intregation
 
 
     
@@ -244,9 +316,9 @@ function Userprofile(){
                         <li>Hands-on coding exercises</li>
                       </ul>
                       <br></br>
-                      <Link to="https://pages.razorpay.com/pl_Nd8Vux3cf3Pouo/view">
-                      <button className="btn btn-info" >Enroll Now</button>
-                      </Link>
+                      
+                      <button className="btn btn-info" onclick="openRazorpay()">Enroll Now</button>
+                      
                     </div>
                   </div>
                 </div>
@@ -263,9 +335,9 @@ function Userprofile(){
                       </ul>
                       <br></br>
              
-                      <Link to="https://pages.razorpay.com/pl_Nd8Vux3cf3Pouo/view">
-                      <button className="btn btn-info" >Enroll Now</button>
-                      </Link></div>
+                      
+                      <button className="btn btn-info" onclick="openRazorpay()" >Enroll Now</button>
+                     
                   </div>
                 </div>
 
@@ -281,9 +353,9 @@ function Userprofile(){
                       </ul>
                       <br></br>
                     
-                      <Link to="https://pages.razorpay.com/pl_Nd8Vux3cf3Pouo/view">
-                      <button className="btn btn-info" >Enroll Now</button>
-                      </Link>
+                     
+                      <button className="btn btn-info" onclick="openRazorpay()">Enroll Now</button>
+                     
                       
                     </div>
                   </div>
