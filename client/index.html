@@ -27,13 +27,7 @@
     </head>
   <body>
     <div id="root"></div>
-    <script>
-      (function(){
-        var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
-        if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
-        s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
-        rzp && rzp.init && rzp.init()}})();
-    </script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script type="module" src="/src/main.jsx"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
