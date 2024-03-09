@@ -63,7 +63,7 @@ function Userprofile(){
     //paymnet intregation
 
     const openRazorpay = async (userData) => {
-      const response = await fetch('http://localhost:3000/create-order', { method: 'POST' });
+      const response = await fetch('https://micro-boto-lt5j.vercel.app/create-order', { method: 'POST' });
       const order = await response.json();
   
       const options = {
@@ -104,7 +104,7 @@ function Userprofile(){
       try {
     
         // Make an API request to update isjava value
-        const updateResponse = await fetch('/update-isjava', {
+        const updateResponse = await fetch('https://micro-boto-lt5j.vercel.app/update-isjava', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
