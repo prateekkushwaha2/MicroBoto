@@ -4,6 +4,8 @@ import React from 'react';
 import './index.css'
 import {useNavigate, useLocation, Link } from 'react-router-dom';
 import { useState, useEffect, setState} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -114,7 +116,9 @@ function Userprofile(){
         });
     
         if (updateResponse.ok) {
-          navigate('/bot');
+           toast.success('Course purchased successfully. Happy learning!', {
+           position: toast.POSITION.TOP_CENTER,
+           });
         } else {
           console.error('Failed to update isjava:', updateResponse.statusText);
           alert('Failed to update isjava. Please try again later.');
