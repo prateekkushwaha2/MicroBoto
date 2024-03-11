@@ -7,6 +7,7 @@ import YouTubeVideo from './YouTubeVideo';
 
 
 function Bot(){
+    const navigate = useNavigate();
     const location = useLocation();
     const userData = location.state?.userData  || null;
     const isLiveSession = /* Logic to determine if the live session is going on */ true;
