@@ -1,7 +1,7 @@
 # MicroBoto
 
 <p align="center">
-  <img src="image.jpg" alt="MicroBoto Logo" width="300" height="auto">
+  <img src="logo.png" alt="MicroBoto Logo" width="300" height="auto">
 </p>
 
 ## Description
