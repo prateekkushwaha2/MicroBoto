@@ -10,11 +10,10 @@ import { faYoutube, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg
 import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
 
-const override = css`
+const override = css'
   display: block;
   margin: 0 auto;
-  border-color: #36D7B7;
-`;
+  border-color: #36D7B7;';
 
 
 function App() {
@@ -994,7 +993,6 @@ function App() {
                 <p>&copy; 2024 Your Company. All rights reserved.</p>
               </div>
             </footer>
-            {/* our footer section ends here */}
               {isLoading && (
                  <div className="loading-spinner">
                    <RingLoader color="#36D7B7" css={override} size={150} loading />
