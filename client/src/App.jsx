@@ -154,13 +154,13 @@ function App() {
     {
       name: 'MicroBoto - Website',
       description: 'A brief description of Project 1.',
-      githubUrl: 'https://github.com/prateekmaurya2/microboto',
+      githubUrl: 'https://github.com/prateekkushwaha2/microboto',
       // imageUrl: '/opensource.png', // Replace with actual image URL
     },
     {
       name: 'MicroBoto - Education',
       description: 'A brief description of Project 2.',
-      githubUrl: 'https://github.com/prateekmaurya2/microboto-education',
+      githubUrl: 'https://github.com/prateekkushwaha2/microboto-education',
       // imageUrl: '.src/assets/opensource.png', // Replace with actual image URL
     },
     // Add more projects as needed
