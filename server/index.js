@@ -13,7 +13,7 @@ const port = process.env.PORT || 3306;
 
 
 const corsOptions = {
-  origin: 'https://micro-boto.vercel.app',
+  origin: 'https://microBoto.vercel.app',
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
