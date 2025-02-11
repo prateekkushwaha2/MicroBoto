@@ -7,20 +7,20 @@ import { useNavigate } from 'react-router-dom';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { css } from '@emotion/react';
-import { RingLoader } from 'react-spinners';
+// import { css } from '@emotion/react';
+// import { RingLoader } from 'react-spinners';
 
-const override = css'
-  display: block;
-  margin: 0 auto;
-  border-color: #36D7B7;';
+// const override = css'
+//   display: block;
+//   margin: 0 auto;
+//   border-color: #36D7B7;';
 
 
 function App() {
    //reset pa
 
   
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const [userData, setUserData] = useState([null]);
@@ -29,7 +29,7 @@ function App() {
     e.preventDefault();
 
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       const response = await fetch('https://micro-boto-lt5j.vercel.app/login', {
         method: 'POST',
         headers: {
@@ -75,7 +75,7 @@ function App() {
     e.preventDefault();
 
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       const response = await fetch('https://micro-boto-lt5j.vercel.app/createAccount', {
         method: 'POST',
         headers: {
@@ -117,7 +117,7 @@ function App() {
     e.preventDefault();
 
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       const response = await fetch('https://micro-boto-lt5j.vercel.app/resetPassword', {
         method: 'POST',
         headers: {
@@ -993,11 +993,11 @@ function App() {
                 <p>&copy; 2024 Your Company. All rights reserved.</p>
               </div>
             </footer>
-              {isLoading && (
+{/*               {isLoading && (
                  <div className="loading-spinner">
                    <RingLoader color="#36D7B7" css={override} size={150} loading />
                  </div>
-              )}
+              )} */}
       </div>      
    
     </>
