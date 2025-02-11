@@ -735,13 +735,13 @@ function App() {
                         className="img-fluid rounded-circle mb-3"
                         alt="GitHub Profile"
                       />
-                      <h5 className="card-title">@prateekmaurya2</h5>
+                      <h5 className="card-title">@prateekkushwaha2</h5>
                       <p className="card-text">
                         <bold>Contribution in NodeJs Open - Source :  Improving error handling</bold><br></br>
                         Detail : I've added a handleNpmError function to handle errors that may occur during npm install and npm rebuild. If an error occurs, it prints an error message and sets the process exit code to 1. Additionally, the main function (runNPMPackageTests) is wrapped in a try-catch block to handle unexpected errors and print an error message.
                       </p>
                       <a
-                        href="https://github.com/prateekmaurya2" 
+                        href="https://github.com/prateekkushwaha2" 
                         className="btn btn-info"
                         target="_blank"
                         rel="noopener noreferrer"
