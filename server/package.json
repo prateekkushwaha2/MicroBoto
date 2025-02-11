@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,6 +19,6 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.9.1",
     "nodemailer": "^6.9.9",
-     "razorpay": "^2.9.2",   
+    "razorpay": "^2.9.2"
   }
 }
