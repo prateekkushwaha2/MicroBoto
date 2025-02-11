@@ -19,7 +19,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/Userprofile" element={<Userprofile />}  />
-        <Route path="/PasswordChange/:token" element={<PasswordChange />}/>
+        <Route path="/PasswordChange" element={<PasswordChange />}/>
         <Route path="/Bot" element={<Bot />} />
       </Routes>
   </React.StrictMode>
