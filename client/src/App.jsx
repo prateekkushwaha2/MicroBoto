@@ -761,7 +761,7 @@ function App() {
                   <div className="col-lg-6">
                     <h2 className="mb-4">About Us</h2>
                     <p>
-                      Welcome to [Your Company Name], where we are dedicated to revolutionizing the Indian tech industry.
+                      Welcome to MicroBoto, where we are dedicated to revolutionizing the Indian tech industry.
                       Established with a vision to transform education, create cutting-edge software solutions, and contribute
                       to technological advancements, we are committed to making a positive impact.
                     </p>
@@ -771,7 +771,7 @@ function App() {
                       security.
                     </p>
                     <p>
-                      At [Your Company Name], we believe in the power of technology to shape the future. Through continuous
+                      At MicroBoto, we believe in the power of technology to shape the future. Through continuous
                       learning, research, and collaboration, we aim to create a vibrant ecosystem that fosters creativity and
                       excellence.
                     </p>
@@ -808,7 +808,7 @@ function App() {
                   <div className="col-lg-6">
                     <h2 className="mb-4">Exploring Blockchain</h2>
                     <p>
-                      At Your Company, we are at the forefront of exploring and understanding how blockchain technology is
+                      At MicroBoto Company, we are at the forefront of exploring and understanding how blockchain technology is
                       revolutionizing industries. Blockchain has the potential to transform business processes, enhance
                       security, and create new opportunities for innovation.
                     </p>
