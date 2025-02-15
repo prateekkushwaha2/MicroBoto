@@ -50,8 +50,8 @@ const pool = mysql.createPool(process.env.DB_CONNECTION_URI);
 
 
 const razorpay = new Razorpay({
-  key_id: 'rzp_test_OtMj92aUxskfFU',
-  key_secret: 'PeuHXfHbJPzABdYUTD44AyhU',
+  key_id: process.env.key_id,
+  key_secret: process.env.keysecret,
 });
 
 app.post('/create-order', async (req, res) => {
